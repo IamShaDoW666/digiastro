@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+import type { CollectionEntry } from "astro:content";
+import Card from "../components/Card.astro";
+import HeroComponents from "../components/HeroComponents.astro";
+import HeaderComponents from "../components/HeaderComponents.astro";
+import FeatureComponents from "../components/FeatureComponents.astro";
+---
+
+<Layout title="Welcome to Digital Link Technology.">
+  <HeaderComponents />
+  <HeroComponents/> 
+  <FeatureComponents/>
+</Layout>
