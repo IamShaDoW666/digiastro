@@ -1,16 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-
-import type { CollectionEntry } from "astro:content";
-import Card from "../components/Card.astro";
 import HeroComponents from "../components/HeroComponents.astro";
-import HeaderComponents from "../components/HeaderComponents.astro";
 import FeatureComponents from "../components/FeatureComponents.astro";
+import DigiComponents from "../components/DigiComponents.astro";
+import Slider from "../components/Slider";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import FAQ from "../components/FAQ.astro";
+const testimonials: CollectionEntry<"testimonials">[] = (
+  await getCollection("testimonials")
+).sort(
+  (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
+    a.data.id - b.data.id
+);
 ---
 
 <Layout title="Welcome to Digital Link Technology.">
-  <HeaderComponents />
-  <HeroComponents/> 
-  <FeatureComponents/>
+  <HeroComponents />
+  <FeatureComponents />
+  <DigiComponents />
+  <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl">Latest Hikvision products in UAE</div>
+  <Slider client:load />
+  <TestimonialsSection testimonials={testimonials} />
+  <FAQ/>
 </Layout>

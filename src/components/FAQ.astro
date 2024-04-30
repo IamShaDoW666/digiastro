@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AccordionItem from "./widgets/AccordionItem.astro";
+
+
+
+// Define the string variable `subTitle` to provide additional information.
+const subTitle: string =
+  "Ask us anything about our brand and products, and get factual responses.";
+
+// Define a helper function to generate ids dynamically.
+const makeId = (base: any, index: any) => `${base}${index + 1}`;
+// Define an array `faqs` that holds the content for the Frequently Asked Questions.
+const faqs = [
+  // Content of each FAQ item goes here
+  {
+    heading: "Where can I purchase Hikvision products in the UAE?",
+    content:
+      "You can purchase authentic Hikvision products from Digital Link Technology, an authorized distributor of Hikvision in the UAE. We offer a wide range of security and surveillance solutions to meet your needs.",
+  },
+  {
+    heading: "What types of Hikvision products do you distribute?",
+    content:
+      "We distribute a comprehensive range of Hikvision products, including CCTV cameras, DVRs, NVRs, access control systems, intercoms, and video management software.",
+  },
+  {
+    heading:
+      "Are your Hikvision products genuine and authentic?",
+    content:
+      "Yes, all Hikvision products offered by Digital Link Technology are 100% genuine and authentic. As an authorized distributor, we ensure the highest quality standards and provide products directly from Hikvision.",
+  },
+  {
+    heading: "Do you offer installation services for Hikvision products?",
+    content:
+      "While we do not provide installation services directly, we can recommend trusted partners who specialize in the installation and setup of Hikvision products. Feel free to contact us for referrals.",
+  },
+  {
+    heading: "What kind of support do you offer for Hikvision products?",
+    content:
+      "We offer comprehensive technical support and assistance for Hikvision products purchased through Digital Link Technology. Our team of experts is available to help you with product inquiries, troubleshooting, and guidance",
+  },
+  {
+    heading:
+      "How can I become a reseller or partner with Digital Link Technology for Hikvision products?",
+    content:
+      "If you're interested in becoming a reseller or partner with Digital Link Technology, please contact us to discuss partnership opportunities and requirements. We welcome collaborations with businesses looking to distribute Hikvision products in the UAE",
+  },
+];
+---
+
+<!-- Main container that holds all content. Customized for different viewport sizes. -->
+
+<section
+  class="mx-auto max-w-[85rem] px-14 py-10 sm:px-6 lg:px-8 lg:py-10 2xl:max-w-full"
+>
+  <div class="grid gap-2 md:grid-cols-5 px-5">
+    <div class="md:col-span-2">
+      <div class="max-w-xs">
+        <h2
+          class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          Frequently<br />asked questions
+        </h2>
+        <p class="mt-1 hidden text-neutral-600 dark:text-neutral-400 md:block">
+          {subTitle}
+        </p>
+      </div>
+    </div>
+    <!-- FAQ accordion items -->
+    <div class="md:col-span-3">
+      <div
+        class="hs-accordion-group divide-y divide-neutral-200 dark:divide-neutral-700"
+      >
+        {
+          faqs.map((question, i) => {
+            // Generate ids dynamically for each FAQ accordion item.
+            let id = makeId(
+              "hs-basic-with-title-and-arrow-stretched-heading-",
+              i,
+            );
+            let collapseId = makeId(
+              "hs-basic-with-title-and-arrow-stretched-collapse",
+              i,
+            );
+
+            return (
+              <AccordionItem
+                {...question}
+                id={id}
+                collapseId={collapseId}
+                first={i === 0}
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="/scripts/vendor/preline/accordion/index.js"></script>

@@ -1,0 +1,22 @@
+---
+// Import necessary components
+import { Image } from "astro:assets";
+
+import type { CollectionEntry } from "astro:content";
+
+const { blogEntry } = Astro.props;
+
+interface Props {
+  blogEntry: CollectionEntry<"blog">;
+}
+---
+
+<div class="w-8 h-8 rounded">
+  <Image
+    class="w-full h-full overflow-hidden object-cover rounded object-center"
+    src={blogEntry.data.authorImage}
+    alt={blogEntry.data.authorImageAlt}
+    draggable={"false"}
+    format={"avif"}
+  />
+</div>

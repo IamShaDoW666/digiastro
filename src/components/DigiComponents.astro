@@ -1,0 +1,111 @@
+---
+import hikvision from "../assets/images/hik.png";
+import TabNav from "./widgets/TabNav.astro";
+import TabContent from "./widgets/TabContent.astro";
+import sample from "../assets/images/cam12.png";
+import cam from "../assets/images/cam.png";
+---
+
+<section class="realtive md:py-0 py-0">
+    <div class="container relative">
+        <div class="grid grid-cols-1 pb-6 text-center">
+            <h3 class="font-semibold text-4xl text-white leading-normal m-4">Top Hikvision distributor in Dubai</h3>
+            <p class="text-slate-400 max-w-xl mx-auto">Discover why we're the preferred choice as a Hikvision distributor in the UAE. Our commitment to excellence means we offer the best-selling Hikvision products renowned for their reliability, performance, and innovation.</p>
+        </div><!--end grid-->
+
+        <div class="grid md:grid-cols-12 grid-cols-1 lg:ml-32 gap-6 p-8">
+            <div class="lg:col-span-4 md:col-span-5 gap-2">
+            <div class="sticky top-20">
+            <nav class="flex-column p-6 bg-white shadow rounded-md" aria-label="Tabs" role="tablist" >
+
+
+                <TabNav  
+                id="tabs-with-card-item-1" 
+                dataTab="#tabs-with-card-1"
+                aria="tabs-with-card-1"
+                heading="Best Hikvision distributor in UAE"
+                content="At Digital Link, customer satisfaction is our top priority. We offer comprehensive technical support services to assist you at every stage of your project, from initial consultation to installation and beyond"
+                first={true}>
+                </TabNav>
+                
+                <TabNav
+                id="tabs-with-card-item-2"
+                        dataTab="#tabs-with-card-2"
+                        aria="tabs-with-card-2"
+                        heading="Best seller Hikvision products"
+                        content="Experience the difference of partnering with the leading Hikvision distributor in the UAE"
+                      >
+                      </TabNav>
+                      <TabNav
+                      id="tabs-with-card-item-3"
+                      dataTab="#tabs-with-card-3"
+                      aria="tabs-with-card-3"
+                      heading="Hikvision biometric access control UAE"
+                      content="In addition to our extensive range of UNV cameras,."
+                      >
+                    </TabNav>
+                        
+                </nav>
+
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 md:col-span-7 bg-white h-auto p-8 rounded-2xl">
+           
+         
+                <div class= "">
+                <div class="flex justify-center items-center"> 
+                    <TabContent
+                    id="tabs-with-card-1"
+                    aria="tabs-with-card-item-1"
+                    src={hikvision}
+                    alt="Yellow and black heavy equipment on brown grass field"
+                    first={true}
+                  />
+                  <TabContent
+                  id="tabs-with-card-2"
+                  aria="tabs-with-card-item-2"
+                  src={sample}
+                  alt="A screenshot or graphic representation of the intuitive dashboard"
+                  second={true}
+                />
+                <TabContent
+                  id="tabs-with-card-3"
+                  aria="tabs-with-card-item-3"
+                  src={cam}
+                  alt="Gray metal building frame near tower crane during daytime"
+                />
+                </div>       
+                
+                       
+                    
+            <div class="mt-24"> 
+                <h5 class="text-lg font-medium">Hikvision DVR supplier UAE</h5>
+                <p class="text-slate-400 mt-4">Digital Link is an authorized distributor of Hikvision products in the UAE. This accreditation ensures that every product you purchase is authentic, backed by manufacturer warranties, and meets the highest standards of quality and reliability</p>
+                <div class="mt-2"> 
+                <a href="" class="text-teal-500">Read More <i class="mdi mdi-chevron-right align-middle"></i></a>
+                </div>
+            </div>
+                        
+            </div>  
+                    
+                
+          <div class="hidden " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                <img src="assets/images/blog/02.jpg" class="shadow dark:shadow-gray-700 rounded-md" alt="">
+
+                <div class="mt-6">
+                            <h5 class="text-lg font-medium">Project Execution</h5>
+                            <p class="text-slate-400 mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, impedit vitae. Nobis, similique omnis cumque sapiente laboriosam animi quod cupiditate?</p>
+                            <div class="mt-4">
+                                <a href="" class="text-teal-500">Read More <i class="mdi mdi-chevron-right align-middle"></i></a>
+                            </div>
+                        </div>
+            </div> 
+               
+                
+            </div>
+        </div><!--end grid-->
+    </div><!--end container-->
+</section>
+<script is:inline src="/scripts/vendor/preline/tabs/index.js"></script><!--end section-->
+

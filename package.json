@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host=0.0.0.0 --port=8000",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -11,10 +11,18 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.3.1",
     "@astrojs/tailwind": "^5.1.0",
-   
-    "astro": "^4.6.3",
+    "@googlemaps/js-api-loader": "^1.16.6",
+    "@react-google-maps/api": "^2.19.3",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.7.0",
     "astro-seo": "^0.8.3",
+    "framer-motion": "^11.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-floating-whatsapp": "^5.0.8",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }

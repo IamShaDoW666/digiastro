@@ -2,10 +2,15 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		container: {
+            center: true, padding: {
+                DEFAULT: '1rem', sm: '1rem', lg: '1rem', xl: '1rem', '2xl': '1rem',
+            },
+        },
 		extend: {
 			colors: {
 				light: {
-				"hikvision": '#D71920',
+				"hikvision": '#d7150e',
 				  "primary": "#EBF3FA",
 				  "secondary": "#E3EDF7",
 				  "blue-dark": "#31456A",
