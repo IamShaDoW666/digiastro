@@ -22,7 +22,7 @@ const featureCollection = defineCollection({
 });
 
 const productsCollection = defineCollection({
-  type: 'data',
+  type: 'content',
     schema: ({ image }) => z.object({
     main: z.object({
       id: z.number(),

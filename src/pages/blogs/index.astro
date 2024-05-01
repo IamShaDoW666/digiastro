@@ -2,14 +2,13 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import CardBlog from "../../components/CardBlog.astro";
-import CardRelated from "../../components/CardRelated.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const blogPosts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const { post } = Astro.props;
+
 
  export async function getStaticPaths() {
   const blogPosts = await getCollection("blog");

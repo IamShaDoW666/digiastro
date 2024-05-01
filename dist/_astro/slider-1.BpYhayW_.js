@@ -1,0 +1,1 @@
+const i="slider-1.md",t="slider",s="slider-1",e="",n={id:1,slider:"../slider/hik7.png",sliderAlt:"Digital link"},d={type:"content",filePath:"C:/Users/Milan/Desktop/Work/digiastro/src/content/slider/slider-1.md",rawData:void 0};export{d as _internal,e as body,t as collection,n as data,i as id,s as slug};

@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ProductCard from "../../components/ProductCard.astro";
-import MapContainer from "../../components/GoogleMap";
+
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
   await getCollection("products")
@@ -20,10 +20,8 @@ const productDvr: CollectionEntry<"products">[] = (
   await getCollection("products")
 ).filter((a: CollectionEntry<"products">) => a.data.main.category == "DVR");
 
-// Define variables for page content
-const title: string = "Products";
-const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+
+
 ---
 
 <Layout title="Products | Digital Link">
@@ -39,7 +37,7 @@ const subTitle: string =
     <div
       class="grid grid-cols-1 px-12 py-12 mt-8 w-full gap-4 lg:grid-cols-6 lg:gap-4 md:grid-2 md:grid-cols-4 sm:grid-cols-2 md:gap-4 xl:gap-4"
     >
-      {product.map((product, index) => <ProductCard product={product} />)}
+      {product.map((product) => <ProductCard product={product} />)}
     </div>
   </div>
 
@@ -55,7 +53,7 @@ const subTitle: string =
     <div
       class="grid grid-cols-1 px-12 py-12 mt-8 w-full gap-4 lg:grid-cols-6 lg:gap-4 md:grid-2 md:grid-cols-4 sm:grid-cols-2 md:gap-4 xl:gap-4"
     >
-      {productCamera.map((product, index) => <ProductCard product={product} />)}
+      {productCamera.map((product) => <ProductCard product={product} />)}
     </div>
   </div>
 
@@ -71,7 +69,7 @@ const subTitle: string =
     <div
       class="grid grid-cols-1 px-12 py-12 mt-8 w-full gap-4 lg:grid-cols-6 lg:gap-4 md:grid-2 md:grid-cols-4 sm:grid-cols-2 md:gap-4 xl:gap-4"
     >
-      {productDvr.map((product, index) => <ProductCard product={product} />)}
+      {productDvr.map((product) => <ProductCard product={product} />)}
     </div>
   </div>
 </Layout>
