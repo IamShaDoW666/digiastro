@@ -49,12 +49,12 @@ const { product } = Astro.props;
           <div class="grid gap-12 md:grid-cols-2 bg-neutral-600 hover:bg-neutral-700 p-8 rounded-2xl">
             <div class="lg:w-3/4 border-1 px-4 ">
               <h2
-                class="text-balance text-3xl font-bold tracking-tight text-neutral-600 dark:text-neutral-200 md:leading-tight lg:text-4xl"
+                class="text-balance text-3xl font-bold tracking-tight text-white  md:leading-tight lg:text-4xl"
               >
                 {product.data.description.title}
               </h2>
               <p
-                class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
+                class="mt-3 text-pretty text-white "
               >
                 {product.data.description.subTitle}
               </p>
@@ -71,7 +71,7 @@ const { product } = Astro.props;
                 product.data.descriptionList.map((list:any) => (
                   <div class="flex">
                     <div>
-                      <h3 class="text-base  text-neutral-600 dark:text-neutral-200 sm:text-lg">
+                      <h3 class="text-base  text-white d sm:text-lg">
                         {list.title}
                       </h3>
                      
@@ -91,10 +91,10 @@ const { product } = Astro.props;
               {
                 product.data.specificationsLeft.map((spec:any) => (
                   <div>
-                    <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
+                    <h3 class="block font-bold text-white">
                       {spec.title}
                     </h3>
-                    <p class="text-neutral-600 dark:text-neutral-400">
+                    <p class="text-white">
                       {spec.subTitle}
                     </p>
                   </div>
@@ -105,10 +105,10 @@ const { product } = Astro.props;
               {
                 product.data.specificationsRight?.map((spec:any) => (
                   <div>
-                    <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
+                    <h3 class="block font-bold text-white">
                       {spec.title}
                     </h3>
-                    <p class="text-neutral-600 dark:text-neutral-400">
+                    <p class="text-white">
                       {spec.subTitle}
                     </p>
                   </div>
