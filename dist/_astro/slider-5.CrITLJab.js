@@ -1,1 +1,0 @@
-const s="slider-5.md",e="slider",t="slider-5",i="",n={id:5,slider:"../slider/hik1.png",sliderAlt:"seamless Integration:"},d={type:"content",filePath:"C:/Users/Milan/Desktop/Work/digiastro/src/content/slider/slider-5.md",rawData:void 0};export{d as _internal,i as body,e as collection,n as data,s as id,t as slug};

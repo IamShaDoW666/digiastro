@@ -11,6 +11,7 @@ export default defineConfig({
 			config: {
         textCompression: 'gzip',
 			  forward: ["dataLayer.push"],
+       
 			},
 		}),
   ]

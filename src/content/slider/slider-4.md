@@ -1,5 +1,5 @@
 ---
 id: 4
-slider: "../slider/hik2.png"
+slider: "../slider/hik2.webp"
 sliderAlt:  "seamless Integration:"
 ---
