@@ -8,6 +8,12 @@ const linkClass =
   "inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5";
 ---
 
-<li class=inline><a href={url} target="_blank" class ={linkClass}>
-  <slot /></a>
+<li class=inline>
+  <a href={url} target="_blank" 
+  class ={linkClass}
+  aria-label="social media"
+  aria-labelledby="Lovosis Technology"
+  >
+  <slot />
+</a>
 </li>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { useEffect, useState } from "react";
 
+
 const Slider = () => {
   const [sliders, setSliders] = useState<CollectionEntry<"slider">[]>([])
   const getSliders = async () => {
@@ -35,8 +36,10 @@ const Slider = () => {
                     <div key={index} className="flex-shrink-0 overflow-x-hidden">
                         <div className="m-8 md:w-64 md:h-64 w-52 h-52 items-center justify-center border-2 object-cover  border-gray-600 p-12 transform transition duration-500 hover:scale-110" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             {/* Render the image using the fetched URL */}
-                           
-                            <img src={slider.data.slider} alt={slider.data.sliderAlt} style={{ maxWidth: '100%',maxHeight: '100%' }} />
+
+                            <img src={slider.data.slider} 
+                            alt={slider.data.sliderAlt} 
+                            style={{ maxWidth: '100%',maxHeight: '100%' }} />
                            
                         </div>
                         
