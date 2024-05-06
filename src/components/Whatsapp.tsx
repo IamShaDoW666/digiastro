@@ -1,14 +1,14 @@
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
-import logo from '../assets/images/dg.png';
+import logo from '../assets/images/logolovosis.svg';
 
 const Whatsapp = () => {
      const logoUrl = logo.src;
     return <FloatingWhatsApp  
-    accountName='Digital Link Technology Dubai' 
-    phoneNumber='+917012749976' 
+    accountName='Lovosis Technology Dubai' 
+    phoneNumber='+971555529469' 
     avatar={logoUrl} 
     statusMessage="Live chat now"
-    chatMessage="Welcome to Digital Link Technology 🤝. How can we help?"
+    chatMessage="Welcome to Lovosis Technology 🤝. How can we help?"
     />
 }
 
