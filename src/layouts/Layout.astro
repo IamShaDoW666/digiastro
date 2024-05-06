@@ -7,6 +7,7 @@ import { SEO } from "astro-seo";
 import HeaderComponents from "../components/HeaderComponents.astro";
 import FooterSections from "../components/FooterSections.astro";
 import Whatsapp from "../components/Whatsapp";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 
 ---
@@ -16,7 +17,7 @@ import Whatsapp from "../components/Whatsapp";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="sitemap" href="/sitemap-index.xml" />
-  
+    <GoogleAnalytics/>
     
     <SEO
       title="Authorized Hikvision distributor in U.A.E"
@@ -56,14 +57,7 @@ import Whatsapp from "../components/Whatsapp";
         ],
       }}
     />
-    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-YXB2LJE9ST"></script>
-    <script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YXB2LJE9ST');
-</script>
   </head>
   <body class = "bg-black text-white">
     <HeaderComponents />

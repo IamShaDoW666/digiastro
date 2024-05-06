@@ -11,7 +11,7 @@ const Hero = () => {
           animate={{  scale: 1 }}
           transition={{repeat: Infinity, repeatType: "mirror", duration: 2}}
         >
-          <img src="assets/images/HIK.svg" />
+          <img src="assets/images/hik.webp" />
         </motion.div>
       </div>
     </div>
