@@ -11,7 +11,11 @@ const Hero = () => {
           animate={{  scale: 1 }}
           transition={{repeat: Infinity, repeatType: "mirror", duration: 2}}
         >
-          <img src="assets/images/hik.webp" />
+          <img src="assets/images/hik.webp"
+          alt ="Top Hikvision dealer in Dubai"
+          loading={"lazy"}
+          />
+          
         </motion.div>
       </div>
     </div>
