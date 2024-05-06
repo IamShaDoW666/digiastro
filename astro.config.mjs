@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), react(), sitemap(),
     partytown({
 			config: {
+        textCompression: 'gzip',
 			  forward: ["dataLayer.push"],
 			},
 		}),
