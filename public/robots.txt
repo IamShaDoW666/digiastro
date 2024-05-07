@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dubai-hikvision.com/sitemap-index.xml
