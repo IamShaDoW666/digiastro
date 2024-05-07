@@ -8,8 +8,6 @@ import HeaderComponents from "../components/HeaderComponents.astro";
 import FooterSections from "../components/FooterSections.astro";
 import Whatsapp from "../components/Whatsapp";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
-
-
 ---
 
 <html lang="en">
@@ -52,9 +50,32 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
          
           { name: "keywords", content: "Hikvision distributor, Dubai, UAE, surveillance, security" },
           { name: "robots", content: "index, follow" },
-          { name: "twitter:title", content: "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology"  },
-          { name: "twitter:description", content: "Lovosis Technology L.L.C" },
-         
+          { name: "language", content: "English"},
+          { name: "Author", content: "Digiimpact"},
+          { name: "description", content: "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE. We offer Hikvision cameras and systems at reasonable rates. Authorized distributor of Hikvision and Dahua products."},
+          {name:"organization", content:JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Organization Name",
+          "url": "https://dubai-hikvision.com",
+          "logo": "https://dubai-hikvision.com/logo.jpg",
+          "description": "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE.",
+          "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "25th St - Naif - Dubai - United Arab Emirates",
+          "addressLocality": "Dubai",
+          "addressRegion": "Dubai",
+          "postalCode": "123241",
+          "addressCountry": "AE"
+  },
+           "contactPoint": {
+           "@type": "ContactPoint",
+           "telephone": "+971 50 998 2727",
+           "contactType": "Sales"
+  }
+
+         }),}
+
         ],
       }}
     />
