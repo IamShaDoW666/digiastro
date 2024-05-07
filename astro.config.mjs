@@ -9,6 +9,9 @@ export default defineConfig({
   site: 'https://dubai-hikvision.com',
   integrations: [tailwind(), react(), sitemap(), partytown({
     config: {
+      facebook: {
+        id: '1454214185457776'
+      },
       
       forward: ["dataLayer.push"]
     }
