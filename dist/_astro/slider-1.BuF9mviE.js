@@ -1,0 +1,1 @@
+const t="slider-1.md",i="slider",d="slider-1",e="",s={id:1,slider:"../slider/hik7.webp",sliderAlt:"Digital link"},l={type:"content",filePath:"C:/xampp/htdocs/digiastro/src/content/slider/slider-1.md",rawData:void 0};export{l as _internal,e as body,i as collection,s as data,t as id,d as slug};
