@@ -11,59 +11,6 @@ interface Props {
 }
 ---
 
-<!--  The following anchor tag is the main container for the card.
-     It's a link to the blog post detailed page.
-     The data-astro-prefetch is an Astro specific Dynamic HTML feature,
-     which automatically prefetches the linked page to speed up navigation. -->
-<!-- <a
-  class="group relative block rounded-xl outline-none ring-zinc-500 transition duration-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-  href={`/blog/${blogEntry.slug}/`}
-  data-astro-prefetch
-> -->
-  <!-- The container for the blog post's cover image. Uses astro:assets' Image for image source -->
-  <!-- <div
-    class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7]"
-  >
-    <Image
-      class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
-      src={blogEntry.data.cardImage}
-      alt={blogEntry.data.cardImageAlt}
-      draggable={"false"}
-      loading={"eager"}
-      format={"avif"}
-    />
-  </div>
-
-  <div class="absolute inset-x-0 top-0 z-10">
-    <div class="flex h-full flex-col p-4 sm:p-6">
-      <div class="flex items-center">
-        <AvatarBlog blogEntry={blogEntry} />
-
-        <div class="ms-2.5 sm:ms-4">
-          <h4 class="font-bold text-neutral-50">
-            {blogEntry.data.author}
-          </h4>
-          <p class="text-xs text-neutral-50/[.8]">
-            {formatDate(blogEntry.data.pubDate)}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-   The container for the blog post's title and description -->
-  <!-- <div class="absolute inset-x-0 bottom-0 z-10">
-    <div class="flex h-full flex-col p-4 sm:p-6">
-      <h3
-        class="text-balance text-lg font-bold text-neutral-50 group-hover:text-neutral-50/[.8] sm:text-3xl"
-      >
-        {blogEntry.data.title}
-      </h3>
-      <p class="mt-2 text-pretty text-neutral-50/[.8]">
-        {blogEntry.data.description}
-      </p>
-    </div>
-  </div>
-</a> -->
 <div class="bg-white   rounded-2xl shadow-lg w-full relative p-4 mb-4">
   <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
   <div class="col-span-12 sm:col-span-6  md:col-span-4 lg:col-span-4 xl:col-span-4 p-8 transition-all duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-110">
@@ -93,11 +40,11 @@ interface Props {
                           <img class="w-full h-full overflow-hidden object-cover rounded object-center" src="assets/images/users/avatar-1.jpg" alt="logo" />
                       </div> -->
                       <div class="ml-2">
-                          <a tabindex="0" class="cursor-pointer hover:text-gray-500 focus:text-gray-500 text-gray-800  focus:outline-none focus:underline"><h5 class=" font-medium text-sm">Fitbit Incorporation</h5></a>
+                          <p tabindex="0" class="cursor-pointer hover:text-gray-500 focus:text-gray-500 text-gray-800  focus:outline-none focus:underline"><h5 class=" font-medium text-sm">Fitbit Incorporation</h5></p>
                           <p tabindex="0" class="focus:outline-none text-gray-500  text-xs font-medium">San Diego, California</p>
                       </div>
                   </div>
-                  <a href="" class="block text-slate-500  hover:text-slate-600 underline decoration-1 decoration-dashed underline-offset-4  decoration-primary-500 font-medium  focus:outline-none self-center">Read More <i data-lucide="arrow-right" class="self-center inline-block ms-1 h-4 w-4"></i></a>                            
+                  <p class="block text-slate-500  hover:text-slate-600 underline decoration-1 decoration-dashed underline-offset-4  decoration-primary-500 font-medium  focus:outline-none self-center">Read More <i data-lucide="arrow-right" class="self-center inline-block ms-1 h-4 w-4"></i></a>                            
               </div>
           </div><!--end card-body-->
       </div><!--end col-->
