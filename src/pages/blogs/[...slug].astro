@@ -5,11 +5,15 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import AvatarBlog from "../../components/AvatarBlog.astro";
-import { formatDate } from "../../components/utils/utils";
+import { capitalize, formatDate } from "../../components/utils/utils";
+import type { CollectionEntry } from "astro:content";
+import CardRelated from "../../components/CardRelated.astro";
+import SocialShare from "../../components/widgets/SocialShare.astro";
+import Bookmark from "../../components/widgets/Bookmark.astro";
 
 // getStaticPaths is used to pre-render all routes based on the blog posts
 export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog");
+  const blogPosts = await getCollection("blogs");
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -17,17 +21,10 @@ export async function getStaticPaths() {
 }
 // Get the current post's data
 const { post } = Astro.props;
-
-// Get all blog posts
-// const blogPosts: CollectionEntry<"blog">[] = await getCollection("blog");
-
-// Filter out the current post to get related posts
-// Note: This is a very basic way of choosing related posts, just for the purpose of the example.
-// In a production site, you might want to implement a more robust algorithm, choosing related posts based on tags, categories, dates, authors, or keywords.
-// See example: https://blog.codybrunner.com/2024/adding-related-articles-with-astro-content-collections/
-// const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
-//   (blogEntry) => blogEntry.slug !== post.slug
-// );
+const blogPosts: CollectionEntry<"blogs">[] = await getCollection("blogs");
+const relatedPosts: CollectionEntry<"blogs">[] = blogPosts.filter(
+  (blogEntry) => blogEntry.slug !== post.slug
+);
 ---
 
 <Layout title={post.data.title + " | ScrewFast"}>
@@ -44,14 +41,14 @@ const { post } = Astro.props;
                 >
                   <!--Post metadata and author info-->
                   <span
-                    class="font-bold text-neutral-700 dark:text-neutral-300"
+                    class="font-bold text-white"
                   >
                     {post.data.author}
                   </span>
                 </div>
-                <ul class="text-xs text-neutral-500">
+                <ul class="text-xs text-white">
                   <li
-                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
+                    class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden"
                   >
                     {formatDate(post.data.pubDate)}
                   </li>
@@ -68,7 +65,7 @@ const { post } = Astro.props;
       </div>
       <!--Blog post title-->
       <h2
-        class="mb-3 text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl"
+        class="mb-3 text-2xl font-bold text-white md:text-3xl"
       >
         {post.data.title}
       </h2>
@@ -78,7 +75,7 @@ const { post } = Astro.props;
           post.data.contents.map((content: string, index: any) =>
             index === 1 ? (
               <>
-                <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
+                <p class="text-pretty text-lg text-white">
                   {content}
                 </p>
                 <Image
@@ -90,7 +87,7 @@ const { post } = Astro.props;
                 />
               </>
             ) : (
-              <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
+              <p class="text-pretty text-lg text-white">
                 {content}
               </p>
             )
@@ -106,21 +103,21 @@ const { post } = Astro.props;
         >
           {
             post.data.tags?.map((tag: string, index) => (
-              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-none focus:outline-none focus-visible:outline-none focus-visible:ring dark:bg-neutral-700/60 dark:text-neutral-300">
-               
+              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 outline-none focus:outline-none focus-visible:outline-none focus-visible:ring dark:bg-neutral-700/60 dark:text-neutral-300">
+                {capitalize(tag)}
               </span>
             ))
           }
         </div>
         <!--Bookmark and Share buttons-->
         <div class="flex items-center justify-end gap-x-1.5">
-         
+          <Bookmark />
           <div
             class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
           >
           </div>
           <div class="inline-flex">
-            
+            <SocialShare pageTitle={post.data.title} /> 
           </div>
         </div>
       </div>
@@ -132,12 +129,14 @@ const { post } = Astro.props;
   <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mb-10 max-w-2xl">
       <h2
-        class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        class="text-balance text-2xl font-bold text-white md:text-4xl md:leading-tight"
       >
         Related articles
       </h2>
     </div>
-
+    <div class="grid grid-cols-2 gap-6">
+      {relatedPosts.map((entry) => <CardRelated blogEntry={entry} />)}
+    </div>
    
   </section>
 </MainLayout>

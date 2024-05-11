@@ -105,7 +105,7 @@ const testimonialCollection = defineCollection({
 export const collections = {
   'feature' : featureCollection,
   'products': productsCollection,
-  'blog': blogCollection,
+  'blogs': blogCollection,
   'category': categoriesCollection,
   'testimonials': testimonialCollection,
 };

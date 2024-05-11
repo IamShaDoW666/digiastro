@@ -7,10 +7,14 @@ import AvatarBlog from "./AvatarBlog.astro";
 const { blogEntry } = Astro.props;
 
 interface Props {
-  blogEntry: CollectionEntry<"blog">;
+  blogEntry: CollectionEntry<"blogs">;
 }
 ---
-
+<a
+  class="group relative block rounded-xl outline-none ring-zinc-500 transition duration-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+  href={`/blogs/${blogEntry.slug}/`}
+  data-astro-prefetch
+>
 <div class="bg-white   rounded-2xl shadow-lg w-full relative p-4 mb-4">
   <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
   <div class="col-span-12 sm:col-span-6  md:col-span-4 lg:col-span-4 xl:col-span-4 p-8 transition-all duration-[600ms] ease-[cubic-bezier(0.45,0,0.55,1)] hover:scale-110">
@@ -40,8 +44,8 @@ interface Props {
                           <img class="w-full h-full overflow-hidden object-cover rounded object-center" src="assets/images/users/avatar-1.jpg" alt="logo" />
                       </div> -->
                       <div class="ml-2">
-                          <p tabindex="0" class="cursor-pointer hover:text-gray-500 focus:text-gray-500 text-gray-800  focus:outline-none focus:underline"><h5 class=" font-medium text-sm">Fitbit Incorporation</h5></p>
-                          <p tabindex="0" class="focus:outline-none text-gray-500  text-xs font-medium">San Diego, California</p>
+                          <p tabindex="0" class="cursor-pointer hover:text-gray-500 focus:text-gray-500 text-gray-800  focus:outline-none focus:underline"><h5 class=" font-medium text-sm">Lovosis Technology</h5></p>
+                          <p tabindex="0" class="focus:outline-none text-gray-500  text-xs font-medium"> 25th St - Naif - Dubai - United Arab Emirates</p>
                       </div>
                   </div>
                   <p class="block text-slate-500  hover:text-slate-600 underline decoration-1 decoration-dashed underline-offset-4  decoration-primary-500 font-medium  focus:outline-none self-center">Read More <i data-lucide="arrow-right" class="self-center inline-block ms-1 h-4 w-4"></i></a>                            
@@ -50,3 +54,4 @@ interface Props {
       </div><!--end col-->
   </div><!--end grid-->                              
 </div> <!--end card--> 
+</a>
