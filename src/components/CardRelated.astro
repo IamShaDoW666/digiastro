@@ -14,32 +14,32 @@ interface Props {
   href={`/blogs/${blogEntry.slug}/`}
   data-astro-prefetch
 >
-<div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-    <div class="col-span-12 sm:col-span-12  md:col-span-6 lg:col-span-12 xl:col-span-12 ">
-        <div class="bg-white rounded-2xl shadow-lg w-full relative p-4">
-            <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
-                <div class="col-span-12 sm:col-span-6  md:col-span-6 lg:col-span-4 xl:col-span-4 ">
+<div class="grid grid-cols-12  gap-4 mb-4">
+    <div class="col-span-12">
+        <div class="bg-white rounded-2xl shadow-lg w-full relative p-4 h-auto">
+           
+                <div class="col-span-12">
                     <!-- <img src="assets/images/widgets/sm-2.jpg" alt="" class="max-w-full h-auto rounded-xl"> -->
                     <Image
-                    class="max-w-full h-auto rounded-xl"
+                    class=""
                     src={blogEntry.data.cardImage}
                     alt={blogEntry.data.cardImageAlt}
                     draggable={"false"}
                     format={"avif"}
                   />
                 </div><!--end col-->
-                <div class="col-span-12 sm:col-span-6  md:col-span-6 lg:col-span-8 xl:col-span-8 ">
+                <div class="col-span-12 ">
                     <div class=" h-full flex flex-col p-3">
-                        <div class="w-full block">
-                            <span class="text-[12px] bg-green-500/10 text-green-500 dark:text-green-600 rounded font-medium py-0 px-2 inline-block mb-3">Fashion</span>                                                   
-                            <span class="text-slate-700 dark:text-slate-300 font-medium text-xs ms-2">{formatDate(blogEntry.data.pubDate)}</span>
+                        <div class="w-full  justify-between">
+                            <span class="text-[12px] bg-green-500/10 text-green-500 dark:text-green-600 rounded font-medium py-0 px-2 inline-block mb-3">Hikvision Camera</span>                                                   
+                            <span class="text-black font-medium text-xs ms-2">{formatDate(blogEntry.data.pubDate)}</span>
                         </div>
-                        <p class="text-lg font-semibold  text-gray-600  block leading-5 truncate hover:underline hover:underline-offset-[4px]">
+                        <p class="text-lg font-semibold  text-black  block leading-5 truncate hover:underline hover:underline-offset-[4px]">
                             {blogEntry.data.title} 
                         </a>
                     </div><!--end card-body-->
                 </div><!--end col-->
-            </div><!--end grid-->                              
+                                      
         </div> <!--end card-->
     </div><!--end col--> 
     

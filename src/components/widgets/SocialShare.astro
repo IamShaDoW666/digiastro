@@ -89,7 +89,7 @@ const socialPlatforms: SocialPlatform[] = [
       {
         socialPlatforms.map((platform) => (
           <a
-            class="flex items-center  gap-x-3.5 rounded-lg px-3 py-2 text-sm text-black hover:bg-neutral-200 focus:bg-neutral-100  focus:outline-none dark:text-neutral-300 "
+            class="flex items-center  gap-x-3.5 rounded-lg px-3 py-2 text-sm text-black hover:bg-neutral-200 focus:bg-neutral-100  focus:outline-none"
             href={platform.url}
           >
             <Fragment set:html={platform.svg} />
@@ -98,47 +98,7 @@ const socialPlatforms: SocialPlatform[] = [
         ))
       }
     </div>
-    <!-- <div class="py-2 first:pt-0 last:pb-0">
-      <button
-        type="button"
-        class="js-clipboard hover:text-dark focus-visible:ring-secondary group inline-flex w-full items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-200 focus:bg-neutral-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-        data-clipboard-success-text="Copied"
-      >
-        <svg
-          class="js-clipboard-default h-4 w-4 transition group-hover:rotate-6"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
-          <path
-            d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-          ></path>
-        </svg> 
-
-     <svg
-          class="js-clipboard-success text-primary-accent-light dark:text-primary-accent-dark hidden h-4 w-4"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg> 
-         <span class="js-clipboard-success-text">Copy link</span>
-      </button>
-    </div> -->
-
-
+   
   </div>
 </div>
 
