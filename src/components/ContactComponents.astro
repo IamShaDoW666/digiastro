@@ -1,7 +1,9 @@
 ---
 import MapContainer from "./GoogleMap";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
+import { YouTube } from 'astro-embed';
 import { getCollection, type CollectionEntry } from "astro:content";
+
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
 ).sort(
@@ -51,8 +53,15 @@ const testimonials: CollectionEntry<"testimonials">[] = (
 <!-- =========== Contact Us Start =========== -->
 <section class="lg:pb-24 py-6 mx auto lg:p-24 p-2 relative">
   <div class="container">
+    <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl mt-8">Grand opening</div>
+    <div class="grid grid-cols-1 pb-6 align-items-center text-white text-4xl lg:ml-72">
+      <YouTube id="https://www.youtube.com/shorts/obweq6yMfBE" />
+    </div>
     <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl mt-8">What our customers Say?</div>
     <TestimonialsSection testimonials={testimonials} />
+   
+      
+    
     <div class="lg:flex align-items-center lg:justify-between">
       <div class="lg:w-1/2">
         <div class="mb-6 relative bg-clip-border rounded-[0.1875rem]">
