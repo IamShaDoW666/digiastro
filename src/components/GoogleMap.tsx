@@ -7,8 +7,9 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
 
   };
   const placeCoordinates = {
-    lat: 25.2735015, 
-    lng: 55.3091897,
+    lat: 25.2732815, 
+    lng: 55.3094023,
+    
   };
   
   return (
@@ -22,9 +23,9 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
         <InfoWindow position={placeCoordinates}>
         
         <div>
-          <h4 style= {{color:"blue",fontWeight:"bold",fontSize:"18px"}}>Digital Link Technology</h4>
-          <p style = {{color:"blue", fontWeight: "bold"}}>UNV National Distributor in DUBAI,U.A.E</p>
-          <p style = {{color: "blue"}}>Mobile: +971555529469 </p>
+          <h4 style= {{color:"black",fontWeight:"bold",fontSize:"18px"}}>Lovosis Technology L.L.C</h4>
+          <p style = {{color:"black", fontWeight: "bold"}}>Hikvision Distributor in DUBAI,U.A.E</p>
+          <p style = {{color: "black"}}>Mobile: +971559462214 </p>
         </div>
 
         </InfoWindow>
