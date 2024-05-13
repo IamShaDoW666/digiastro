@@ -11,6 +11,14 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
     lng: 55.3094023,
     
   };
+  const getDirectionsLink = () => {
+    return `https://www.google.com/maps/dir/?api=1&destination=${placeCoordinates.lat},${placeCoordinates.lng}`;
+  };
+
+  const handleDirectionsClick = () => {
+    const directionsLink = getDirectionsLink();
+    window.open(directionsLink, '_blank');
+  };
   
   return (
     <LoadScriptNext
@@ -26,6 +34,7 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
           <h4 style= {{color:"black",fontWeight:"bold",fontSize:"18px"}}>Lovosis Technology L.L.C</h4>
           <p style = {{color:"black", fontWeight: "bold"}}>Hikvision Distributor in DUBAI,U.A.E</p>
           <p style = {{color: "black"}}>Mobile: +971559462214 </p>
+          <button className="bg-green-500 rounded-2xl p-2" onClick={handleDirectionsClick}>Get Directions</button>
         </div>
 
         </InfoWindow>
