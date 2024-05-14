@@ -33,6 +33,7 @@ const productsCollection = defineCollection({
       imgCard: image(),
       imgMain: image(),
       imgAlt: z.string(),
+      sale: z.boolean().default(false)
     }),
     tabs: z.array(
       z.object({
