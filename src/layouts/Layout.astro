@@ -9,6 +9,7 @@ import FooterSections from "../components/FooterSections.astro";
 import Whatsapp from "../components/Whatsapp";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
@@ -19,13 +20,14 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
     <meta name="yandex-verification" content="fadb69f77db9eae5" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <GoogleAnalytics/>
     <!-- <FacebookPixel/> -->
     
     <SEO
       title="Best Hikvision Distributor in Dubai, UAE | Lovosis Technology"
       description="Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE. We offer Hikvision cameras and systems at reasonable rates. Authorized distributor of Hikvision and Dahua products."
-      canonical="https://dubai-hikvision.com"
+      canonical={canonicalURL}
       openGraph={{
         basic: {
           title: "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
@@ -48,7 +50,7 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
       }}
       extend={{
         
-        link: [{ rel: "icon", href: "/favicon.svg" }],
+        // link: [{ rel: "icon", href: "/favicon.svg" }],
         
         meta: [
          
