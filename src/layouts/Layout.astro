@@ -9,6 +9,7 @@ import FooterSections from "../components/FooterSections.astro";
 import Whatsapp from "../components/Whatsapp";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
@@ -25,7 +26,7 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
     <SEO
       title="Best Hikvision Distributor in Dubai, UAE | Lovosis Technology"
       description="Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE. We offer Hikvision cameras and systems at reasonable rates. Authorized distributor of Hikvision and Dahua products."
-      canonical="https://dubai-hikvision.com"
+      canonical={canonicalURL}
       openGraph={{
         basic: {
           title: "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",

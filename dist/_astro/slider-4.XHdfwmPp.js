@@ -1,0 +1,1 @@
+const t="slider-4.md",e="slider",s="slider-4",d="",i={id:4,slider:"../slider/hik2.webp",sliderAlt:"seamless Integration:"},n={type:"content",filePath:"C:/xampp/htdocs/digiastro/src/content/slider/slider-4.md",rawData:void 0};export{n as _internal,d as body,e as collection,i as data,t as id,s as slug};

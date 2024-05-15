@@ -1,4 +1,4 @@
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (<>
@@ -13,7 +13,7 @@ const Hero = () => {
         >
           <img src="assets/images/hik.webp"
           alt ="Top Hikvision dealer in Dubai"
-          loading={"lazy"}
+          loading="lazy"
           />
           
         </motion.div>
