@@ -9,9 +9,7 @@ export default defineConfig({
   site: 'https://dubai-hikvision.com',
   integrations: [tailwind(), react(), sitemap(), partytown({
     config: {
-   
-      
-      forward: ["dataLayer.push"]
+    forward: ["dataLayer.push"]
     }
   }), playformCompress()]
 });

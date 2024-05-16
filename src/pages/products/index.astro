@@ -20,11 +20,12 @@ const productDvr: CollectionEntry<"products">[] = (
   await getCollection("products")
 ).filter((a: CollectionEntry<"products">) => a.data.main.category == "DVR");
 
-
+const title: string =
+  "Hikvision National Distributor in Dubai| cctv,Access controll systems,DVR,NVR  DUBAI";
 
 ---
 
-<Layout title="Products | Digital Link">
+<Layout title={title}>
   <div>
     <div class="mt-6 sm:mb-1 mx-auto md:mb-6 w-1/4 bg-slate-200">
       <h2
