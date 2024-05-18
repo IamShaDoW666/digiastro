@@ -21,34 +21,42 @@ const { title, description, keywords } = Astro.props;
     <!-- <FacebookPixel/> -->
 
     <SEO
-      title={title ?? "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology"}
-      description={description ?? "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE. We offer Hikvision cameras and systems at reasonable rates. Authorized distributor of Hikvision and Dahua products."}
+      title={title ??
+        "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology"}
+      description={description ??
+        "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE. We offer Hikvision cameras and systems at reasonable rates. Authorized distributor of Hikvision and Dahua products."}
       canonical={canonicalURL}
       openGraph={{
         basic: {
           title:
-          title ?? "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
+            title ??
+            "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
           type: "Website",
           image: "https://dubai-hikvision.com/lovosisgraph.jpg",
           url: "https://dubai-hikvision.com",
         },
-      }},
+      }}
+      ,
       twitter={{
         card: "summary_large_image",
         creator: "@Lovosis Technology",
         site: "Lovosis Technology L.L.C",
-        title: title ?? "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
+        title:
+          title ??
+          "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
         image: "https://dubai-hikvision.com/lovosisgraph.jpg",
         imageAlt: "Lovosis Technology U.A.E",
         description:
-          description ?? "Lovosis Technology is an authorized distributor of Hikvision products in Dubai, UAE.",
+          description ??
+          "Lovosis Technology is an authorized distributor of Hikvision products in Dubai, UAE.",
       }}
       extend={{
         meta: [
           {
             name: "keywords",
             content:
-              "Hikvision distributor, Dubai, UAE, surveillance, security" + keywords,
+              "Hikvision distributor, Dubai, UAE, surveillance, security" +
+              keywords,
           },
           { name: "robots", content: "index, follow" },
           { name: "language", content: "English" },

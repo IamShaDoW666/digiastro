@@ -10,6 +10,9 @@ const testimonials: CollectionEntry<"testimonials">[] = (
   (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
     a.data.id - b.data.id
 );
+
+const title: string =
+  "Welcome to Lovosis Technology|Authorized Hikvision Dealer in Dubai ";
 ---
 
 <section class="bg-gray-100 lg:pt-28 sm:pb-36 pb-16 pt-36 relative">
@@ -55,7 +58,7 @@ const testimonials: CollectionEntry<"testimonials">[] = (
   <div class="container">
     <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl mt-8">Grand opening</div>
     <div class="grid grid-cols-1 pb-6 align-items-center text-white text-4xl lg:ml-72">
-      <YouTube id="https://www.youtube.com/shorts/obweq6yMfBE" />
+      <YouTube id="https://www.youtube.com/shorts/obweq6yMfBE" title={title} />
     </div>
     <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl mt-8">What our customers Say?</div>
     <TestimonialsSection testimonials={testimonials} />
