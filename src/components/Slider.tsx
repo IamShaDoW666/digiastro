@@ -16,7 +16,7 @@ const Slider = () => {
   }, []);
   return (
     
-    <div className="relative w-full overflow-hidden ">
+    <div className="relative w-full overflow-hidden">
       
       {/* Wrapping div for seamless looping */}
       <motion.div
