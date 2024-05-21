@@ -1,0 +1,47 @@
+---
+import RatingStar from "../components/widgets/RatingStar.astro";
+import google from "../assets/images/ddd.png";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import type { GoogleData } from "../types/responses";
+const title = "Testimonials | Best Hikvision dealer in Dubai,U.A.E"
+const res = await fetch('https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJLTy5yipDXz4RSpZ-Ic54XRY&key=AIzaSyCieCaQ_bWMpJ46a6l-4Ck_NWVhNtNieAk')
+const data: GoogleData = await res.json()
+---
+
+
+    <div class="text-white lg:py-12 py-0 max-w-6xl mx-auto  m-8">
+        <div class ="flex border-2   bg-white justify-between lg:m-8  p-4 rounded-2xl">
+<div class="flex justify-between">
+    <Image src={google}
+    alt="Hikvision wholesaler in DUBAI"
+    class ="lg:h-12 lg:w-32 ml-2 lg:ml-8 h-6 w-16 mt-2 "
+    />
+ 
+<p class="text-black grid lg:mt-4 ml-2 mt-2">Ratings</p>
+
+
+</div>
+ <a href ="https://g.page/r/CUqWfiHOeF0WEBM/review" class="inline-flex items-center p-2 text-sm bg-blue-500 text-black font-medium leading-6 text-center align-middle select-none  rounded-md transition-all hover:shadow-lg">
+ <button type="submit" >Review</button> 
+</a>  
+      
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:p-8 mt-8">
+           
+            {data.result.reviews.map((review) => review.rating > 4 ? 
+            <div class="p-4 rounded bg-slate-500 shadow flex flex-col gap-y-4 items-center ">
+                <h1 class="text-3xl">
+                    {review.author_name}
+                </h1>
+                
+                <p class="text-balance line-clamp-3">
+                    {review.text}
+                </p>
+               
+                <img class="rounded-full h-12 w-12" src ={review.profile_photo_url}/>
+                <RatingStar rating={review.rating} />
+            </div>: <div></div>)}
+        </div>
+    </div>

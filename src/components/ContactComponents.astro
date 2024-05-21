@@ -3,6 +3,7 @@ import MapContainer from "./GoogleMap";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
 import { YouTube } from 'astro-embed';
 import { getCollection, type CollectionEntry } from "astro:content";
+import GoogleReview from "./GoogleReview.astro";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
@@ -61,8 +62,8 @@ const title: string =
       <YouTube id="https://www.youtube.com/shorts/obweq6yMfBE" title={title} />
     </div>
     <div class="grid grid-cols-1 pb-6 text-center text-white text-4xl mt-8">What our customers Say?</div>
-    <TestimonialsSection testimonials={testimonials} />
-   
+    <!-- <TestimonialsSection testimonials={testimonials} /> -->
+   <GoogleReview/>
       
     
     <div class="lg:flex align-items-center lg:justify-between">

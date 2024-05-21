@@ -5,6 +5,7 @@ import HeaderComponents from "../components/HeaderComponents.astro";
 import FooterSections from "../components/FooterSections.astro";
 import Whatsapp from "../components/Whatsapp";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import FacebookPixel from "../components/FacebookPixel.astro";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, keywords } = Astro.props;
 ---
@@ -18,7 +19,7 @@ const { title, description, keywords } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <GoogleAnalytics />
-    <!-- <FacebookPixel/> -->
+     <FacebookPixel/>
 
     <SEO
       title={title ??
@@ -33,7 +34,7 @@ const { title, description, keywords } = Astro.props;
             "Best Hikvision Distributor in Dubai, UAE | Lovosis Technology",
           type: "Website",
           image: "https://dubai-hikvision.com/lovosisgraph.jpg",
-          url: "https://dubai-hikvision.com",
+          url: "https://dubai-hikvision.com/",
         },
       }}
       ,
@@ -67,7 +68,7 @@ const { title, description, keywords } = Astro.props;
               "@context": "http://schema.org",
               "@type": "Organization",
               name: "Lovosis Technology Dubai",
-              url: "https://dubai-hikvision.com",
+              url: "https://dubai-hikvision.com/",
               logo: "https://dubai-hikvision.com/lovosisgraph.jpg",
               description:
                 "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE.",

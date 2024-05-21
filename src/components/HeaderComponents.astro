@@ -9,7 +9,7 @@ import FooterSocialLink from "./widgets/FooterSocialLink.astro";
 
 <header
   id="navbar"
-  class="bg-white text-black transition-all duration-300 shadow-lg h-24 hidden md:flex sticky top-0 z-10 px-8"
+  class="bg-white text-black backdrop-blur transition-all duration-300 shadow-lg h-24 hidden md:flex sticky top-0 z-10 px-8"
 >
   <a
     href="https://dubai-hikvision.com"
@@ -148,7 +148,7 @@ import FooterSocialLink from "./widgets/FooterSocialLink.astro";
       document.documentElement.scrollTop >= 50
     ) {
       navbar!.classList.remove("bg-white", "text-black");
-      navbar!.classList.add("text-white");
+      navbar!.classList.add("text-cyan-600");
     } else {
       navbar!.classList.add("bg-white", "text-black");
       navbar!.classList.remove("text-white");
