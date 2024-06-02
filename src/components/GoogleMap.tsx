@@ -1,4 +1,4 @@
-import { GoogleMap, Marker, LoadScriptNext ,InfoWindow} from "@react-google-maps/api";
+import { GoogleMap, LoadScriptNext ,InfoWindow} from "@react-google-maps/api";
 
 const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
   const mapStyles = {

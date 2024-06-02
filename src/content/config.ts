@@ -4,7 +4,7 @@ import { z, defineCollection, reference } from 'astro:content';
 
 const categoriesCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object({
+  schema: () => z.object({
     id: z.number(),
     name: z.string(),
     products: z.array(reference("products"))
@@ -13,7 +13,7 @@ const categoriesCollection = defineCollection({
 
 const featureCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object ({
+  schema: () => z.object ({
     id: z.number(),
     title: z.string(),
     body: z.string(),    
