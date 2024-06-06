@@ -13,9 +13,10 @@ const blogPosts: CollectionEntry<"blogs">[] = (await getCollection("blogs")).sor
 const otherPosts: CollectionEntry<"blogs">[] = blogPosts.slice();
 const title: string =
   "Hikvision supplier Dubai|Hikvision CCTV dealer in Dubai";
+const description: string = "Expert Hikvision distributor based in Dubai, UAE. Find genuine products and expert support at our authorized dealership. Your security, our priority."
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
 <div class="flex flex-col">
 <div class="relative w-full"> 
 <div class="container z-1">

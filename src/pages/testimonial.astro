@@ -1,0 +1,48 @@
+---
+import RatingStar from "../components/widgets/RatingStar.astro";
+import google from "../assets/images/ddd.png";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import type { GoogleData } from "../types/responses";
+const title = "Leading Hikvision distributor in Dubai, UAE."
+const res = await fetch('https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJLTy5yipDXz4RSpZ-Ic54XRY&key=AIzaSyCieCaQ_bWMpJ46a6l-4Ck_NWVhNtNieAk')
+const data: GoogleData = await res.json()
+---
+
+<Layout title={title}>
+    <div class="text-white py-12 max-w-6xl mx-auto bg-white m-8">
+        <div class ="flex border-2  justify-between m-8 p-4">
+<div class="flex justify-between mx-start">
+    <Image src={google}
+    alt="Hikvision wholesaler in DUBAI"
+    class ="h-12 w-32 ml-8"
+    />
+ 
+<p class="text-black grid mt-4 ml-2">Ratings</p>
+
+
+</div>
+ <a href ="https://g.page/r/CUqWfiHOeF0WEBM/review" class="inline-flex items-center p-2 text-sm bg-blue-500 text-black font-medium leading-6 text-center align-middle select-none  rounded-md transition-all hover:shadow-lg">
+ <button type="submit" >Submit review</button> 
+</a>  
+      
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+           
+            {data.result.reviews.map((review) => review.rating > 4 ? 
+            <div class="p-4 rounded bg-slate-500 shadow flex flex-col gap-y-4 items-center ">
+                <h1 class="text-3xl">
+                    {review.author_name}
+                </h1>
+                
+                <p class="text-balance line-clamp-3">
+                    {review.text}
+                </p>
+               
+                <img class="rounded-full h-12 w-12" src ={review.profile_photo_url}/>
+                <RatingStar rating={review.rating} />
+            </div>: <div></div>)}
+        </div>
+    </div>
+</Layout>
