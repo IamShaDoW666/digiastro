@@ -7,6 +7,30 @@ import Whatsapp from "../components/Whatsapp";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, keywords } = Astro.props;
+const structuredData = {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  name: "Lovosis Technology Dubai",
+  url: "https://dubai-hikvision.com/",
+  logo: "https://dubai-hikvision.com/lovosisgraph.jpg",
+  description:
+    description ??
+    "Authorized Hikvision distributor based in Dubai, UAE. Explore our range of Hikvision products for your security needs.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "25th St - Naif - Dubai - United Arab Emirates",
+    addressLocality: "Dubai",
+    addressRegion: "Dubai",
+    postalCode: "123241",
+    addressCountry: "AE",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+971 50 998 2727",
+    contactType: "Sales",
+  },
+};
+
 ---
 
 <html lang="en">
@@ -18,7 +42,15 @@ const { title, description, keywords } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <GoogleAnalytics />
-    
+    {
+      structuredData && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }
+
 
     <SEO
       title={title ??
@@ -69,31 +101,7 @@ const { title, description, keywords } = Astro.props;
           { name: "robots", content: "index, follow" },
           { name: "language", content: "English" },
           { name: "Author", content: "Digiimpact" },
-          {
-            name: "organization",
-            content: JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "Organization",
-              name: "Lovosis Technology Dubai",
-              url: "https://dubai-hikvision.com/",
-              logo: "https://dubai-hikvision.com/lovosisgraph.jpg",
-              description:
-                "Lovosis Technology is your premier destination for Hikvision products in Dubai, UAE.",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "25th St - Naif - Dubai - United Arab Emirates",
-                addressLocality: "Dubai",
-                addressRegion: "Dubai",
-                postalCode: "123241",
-                addressCountry: "AE",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+971 50 998 2727",
-                contactType: "Sales",
-              },
-            }),
-          },
+         
         ],
       }}
     />
