@@ -35,7 +35,7 @@ const form = document.getElementById("form");
       })
       .catch((error) => {
         console.log(error);
-        result.innerHTML = "Something went wrong!";
+        result.innerHTML = "sorry we will be back soon!";
       })
       .then(function () {
         form.reset();
