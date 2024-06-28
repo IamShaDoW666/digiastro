@@ -14,7 +14,7 @@ const form = document.getElementById("form");
 
     result.innerHTML = "Sending...";
 
-    fetch("https://api.web3forms.com/submit", {
+    fetch("", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
